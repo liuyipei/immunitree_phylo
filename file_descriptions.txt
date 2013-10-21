@@ -1,0 +1,50 @@
+joni@ember:~/JVL/src/phylo% ls *.m
+
+
+% Generation
+
+% generate_reads_from_a_tree.m - the demo, or the outer script
+% covnert_phylo_tree_to_mutation_tree.m - receives a binary tree, collpses
+%  it to a mutation tree by absorbing childrent with an identical sequence
+%  to their parent
+% drchrnd.m - draw from a Dirichlet Distribution
+% get_random_generator_matrix.m - generate a random transition matrix
+% fill_counts.m - fills in the subtree counts given the node counts
+% generate_sequences.m - generate synthetic data
+
+% MCMC related 
+
+% clean_tree.m - remove deleted nodes from all datastructures, renumber nodes
+% get_log_likelihood.m - compute the log likelihood over the tree
+%    component (including node sequences)
+% estimate_mutation_parameters.m - update the mutation model parameters
+% estimate_read_noise_parameters.m - update the read noise parameters
+% gibbs_read_assignments.m - associate reads to surviving leaves of the tree
+% gibbs_sequences_of_dead_cells.m - infer the sequences of the cells not in
+%   the leaves
+% initialize_chain.m - construct the initial state in the MCMC
+% MH_manipulate.m - local move in tree (generally vertical)
+% MH_auxiliary_graph.m - global move in tree (horizontal)
+% MH_birth_death.m - add a new leaf
+% MH_rates.m - infer death_rate and birth_rate
+% ML_rates.m - maximize death_rate and birth_rate given data
+% MH_tune_death.m - change death time of tree nodes
+% tree_sample_for_phylo.m - clique tree BP on the node sequences
+
+% Visualization
+
+% view_tree.m - plot a tree, with a pie chart and on-click event to show
+%    noise and mutations
+% visualize_tree.m - wrapper for view_tree
+% plot_class_lines.m - draw vertical lines on a figure
+
+
+% Not used 
+
+% generate.m
+% generate_top_down_compressed.m
+% generate_top_down.m
+% generate_top_down_with_steady_stream.m
+% time_given_tree_length_distribution.m
+% untitled.m
+% agglomeratice_clustering_please_do_worse.m
