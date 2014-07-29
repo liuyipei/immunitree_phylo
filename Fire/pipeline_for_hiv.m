@@ -1,5 +1,5 @@
 function [a h chain res] = pipeline_for_hiv(fasta_file, ...
-  germline_file, chain_type, save_outputs, pipeline_stage, opts)
+  germline_file, chain_type, save_outputs, pipeline_stage, opts, nIter)
 % Chain Types:
 % 0: Either Kappa or Lambda
 % 1: Heavy, VDJ
@@ -302,13 +302,17 @@ end
     
 %-%% %%%%%%%%%%%%%%%%%        Build Tree     %%%%%%%%%%%%%%%%%%%%
 
+    if ~exist('nIter', 'var')
+        nIter = 2000
+    end
     % set no. of iterations
-    if size(V_trimmed_clone, 1) > 10, 
-        nIter = 2000; % large trees get more iterations                    
-    else
-        nIter = 200;        
-    end 
-    nIter = 5000;
+    %if size(V_trimmed_clone, 1) > 10, 
+    %    nIter = 2000; % large trees get more iterations                    
+    %else
+    %    nIter = 200;        
+    %end 
+    %nIter = 5000;
+    
     
     % set priors
     priors = struct('is_codon', false, 'is_decay', false, 'pi', V_trimmed_germline.seq, 'NT', [], 'R', []);
