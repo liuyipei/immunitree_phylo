@@ -3,10 +3,11 @@ function rep = load_repertoire(code, replace_underscores, VDJ_letters)
     if nargin<2, replace_underscores = false; end
     if nargin<3, VDJ_letters = 'VDJ'; end
 
-    [~,whoami] = system('whoami')
-    rep_dir = '/afs/cs/u/joni/scratch/data/VDJrepertoire/';
-    if isequal(whoami(1:min(8,end)), 'liuyipei')
-        rep_dir = '.'; % /vision/u/liuyipei/joni/phylo/Fire
+    % [~,whoami] = system('whoami')
+    liuyipei = 1; %isequal(whoami(1:min(8,end)), 'liuyipei')
+    %rep_dir = '/afs/cs/u/joni/scratch/data/VDJrepertoire/';
+    if liuyipei
+        rep_dir = '.'; %
     end
     for c = VDJ_letters
         sprintf([rep_dir '/' code '/%c.fa'], c)

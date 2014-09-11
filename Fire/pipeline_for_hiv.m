@@ -395,8 +395,8 @@ end
     
 %%  save mat file
     if save_outputs        
-        [~, username] = system('whoami');
-        liuyipei = isequal(username(1:8),'liuyipei');
+        % [~, username] = system('whoami');
+        liuyipei = 1; %isequal(username(1:8),'liuyipei'); % default to this behavior
 
         % save tree to file
         clone_file = [fasta_file '.mat'];
@@ -429,8 +429,8 @@ end
     display_figures = opts.display_figures
     if display_figures
         %% compute/show figures    
-        [~, username] = system('whoami');
-        liuyipei = isequal(username(1:8), 'liuyipei');
+        % [~, username] = system('whoami');
+        liuyipei = 1; %isequal(username(1:8), 'liuyipei');
         
         show_read_alignment_to_germline(V_trimmed_clone, ...
             V_trimmed_germline, [], a.t);
